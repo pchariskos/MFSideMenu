@@ -655,6 +655,8 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 
 - (void) handleLeftPan:(UIPanGestureRecognizer *)recognizer {
     if(!self.rightMenuViewController && self.menuState == MFSideMenuStateClosed) return;
+	
+    if (!self.shouldHandleLeftPan) return;
     
     UIView *view = [self.centerViewController view];
     
